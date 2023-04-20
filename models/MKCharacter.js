@@ -6,7 +6,6 @@ const mkCharacterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  artwork: { type: String, required: true },
   stats: {
     acceleration: { type: Number, required: true },
     topSpeed: { type: Number, required: true },
