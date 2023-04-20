@@ -8,7 +8,7 @@ require("dotenv").config();
 // middleware
 app.use(express.json());
 app.use(cors());
-app.use(limiter);
+// app.use(limiter);
 
 // routes
 const charactersRoutes = require("./routes/characters");

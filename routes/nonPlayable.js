@@ -1,20 +1,25 @@
 const express = require("express");
 const router = express.Router();
+const checkHeader = require("../middleware/checkHeader");
 
 // models
 const MKNonPlayable = require("../models/MKNonPlayable");
 
-router.get("/non-playables", async (req, res) => {
-  try {
-    const nonPlayables = await MKNonPlayable.find().select("-__v");
-    res.status(200).json(nonPlayables);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({
-      error: "Server error",
-    });
+router.get(
+  "/non-playables",
+  checkHeader("mk-token", process.env.TOKEN_ACCESS),
+  async (req, res) => {
+    try {
+      const nonPlayables = await MKNonPlayable.find().select("-__v");
+      res.status(200).json(nonPlayables);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        error: "Server error",
+      });
+    }
   }
-});
+);
 
 router.get("/non-playables/:id", async (req, res) => {
   try {
