@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const mkCharacterSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
   name: { type: String, required: true },
   category: {
     type: String,
@@ -12,7 +13,7 @@ const mkCharacterSchema = new mongoose.Schema({
     weight: { type: Number, required: true },
     handling: { type: Number, required: true },
   },
-  cpuItem: { type: String, required: true },
+  cpuItem: { type: Number, ref: "MKItem", required: true },
 });
 
 module.exports = mongoose.model("MKCharacter", mkCharacterSchema);
