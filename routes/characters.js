@@ -4,6 +4,18 @@ const router = express.Router();
 // models
 const MKCharacter = require("../models/MKCharacter");
 
+router.get("/characters", async (req, res) => {
+  try {
+    const characters = await MKCharacter.find();
+    res.status(200).json(characters);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: "Server error",
+    });
+  }
+});
+
 router.post("/characters", async (req, res) => {
   try {
     const { _id, name, category, stats, cpuItem } = req.body;
