@@ -6,7 +6,7 @@ const MKItem = require("../models/MKItem");
 
 router.get("/items", async (req, res) => {
   try {
-    const items = await MKItem.find();
+    const items = await MKItem.find().select("-__v");
     res.status(200).json(items);
   } catch (err) {
     console.error(err);
@@ -19,7 +19,7 @@ router.get("/items", async (req, res) => {
 router.get("/items/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const item = await MKItem.findById(id);
+    const item = await MKItem.findById(id).select("-__v");
     if (!item) {
       return res.status(404).json({ error: "Item not found" });
     }
@@ -41,7 +41,7 @@ router.post("/items", async (req, res) => {
       notes,
     });
 
-    const savedItem = await newItem.save();
+    const savedItem = await newItem.save().select('-__v');
 
     res.status(201).json(savedItem);
   } catch (err) {

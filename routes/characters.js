@@ -6,7 +6,7 @@ const MKCharacter = require("../models/MKCharacter");
 
 router.get("/characters", async (req, res) => {
   try {
-    const characters = await MKCharacter.find();
+    const characters = await MKCharacter.find().select("-__v");
     res.status(200).json(characters);
   } catch (err) {
     console.error(err);
@@ -19,7 +19,7 @@ router.get("/characters", async (req, res) => {
 router.get("/characters/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const character = await MKCharacter.findById(id);
+    const character = await MKCharacter.findById(id).select("-__v");
     if (!character) {
       return res.status(404).json({ error: "Character not found" });
     }
@@ -42,7 +42,7 @@ router.post("/characters", async (req, res) => {
       cpuItem,
     });
 
-    const savedCharacter = await newCharacter.save();
+    const savedCharacter = await newCharacter.save().select('-__v');
 
     res.status(201).json(savedCharacter);
   } catch (err) {
