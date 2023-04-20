@@ -5,9 +5,9 @@ router.get("/", (req, res) => {
   res.status(200).json({ status: "success", data: user });
 });
 
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  res.status(200).send(`Details for user with id ${id}`);
+router.get("/:name", (req, res) => {
+  const name = req.params.name;
+  res.status(200).send(`Details for user with id ${name}`);
 });
 
 module.exports = router;
