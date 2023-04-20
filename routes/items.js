@@ -45,9 +45,8 @@ router.post("/items", async (req, res) => {
 
     res.status(201).json(savedItem);
   } catch (err) {
-    console.error(err);
     res.status(500).json({
-      error: err._message,
+      error: "Server error",
     });
   }
 });

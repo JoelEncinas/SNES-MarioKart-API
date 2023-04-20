@@ -46,9 +46,8 @@ router.post("/characters", async (req, res) => {
 
     res.status(201).json(savedCharacter);
   } catch (err) {
-    console.error(err);
     res.status(500).json({
-      error: err._message,
+      error: "Server error",
     });
   }
 });

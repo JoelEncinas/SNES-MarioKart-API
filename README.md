@@ -4,8 +4,6 @@ restapi using express
 ## todo
 - implement rate-limit dependency
 - add data
-    - characters
-    - items
     - cups
     - courses
     - modes
