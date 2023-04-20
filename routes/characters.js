@@ -16,6 +16,20 @@ router.get("/characters", async (req, res) => {
   }
 });
 
+router.get("/characters/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const character = await MKCharacter.findById(id);
+    if (!character) {
+      return res.status(404).json({ error: "Character not found" });
+    }
+    res.status(200).json(character);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 router.post("/characters", async (req, res) => {
   try {
     const { _id, name, category, stats, cpuItem } = req.body;

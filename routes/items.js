@@ -7,12 +7,26 @@ const MKItem = require("../models/MKItem");
 router.get("/items", async (req, res) => {
   try {
     const items = await MKItem.find();
-    res.status(200).json( items );
+    res.status(200).json(items);
   } catch (err) {
     console.error(err);
     res.status(500).json({
       error: "Server error",
     });
+  }
+});
+
+router.get("/items/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const item = await MKItem.findById(id);
+    if (!item) {
+      return res.status(404).json({ error: "Item not found" });
+    }
+    res.status(200).json(item);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
   }
 });
 
