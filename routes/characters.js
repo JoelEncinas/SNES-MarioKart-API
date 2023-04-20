@@ -42,13 +42,13 @@ router.post("/characters", async (req, res) => {
       cpuItem,
     });
 
-    const savedCharacter = await newCharacter.save().select('-__v');
+    const savedCharacter = await newCharacter.save();
 
     res.status(201).json(savedCharacter);
   } catch (err) {
     console.error(err);
     res.status(500).json({
-      error: "Server error",
+      error: err._message,
     });
   }
 });

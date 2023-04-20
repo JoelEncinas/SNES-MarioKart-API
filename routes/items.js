@@ -41,13 +41,13 @@ router.post("/items", async (req, res) => {
       notes,
     });
 
-    const savedItem = await newItem.save().select('-__v');
+    const savedItem = await newItem.save();
 
     res.status(201).json(savedItem);
   } catch (err) {
     console.error(err);
     res.status(500).json({
-      error: "Server error",
+      error: err._message,
     });
   }
 });
