@@ -9,8 +9,17 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/game-modes", async (req, res) => {
   try {
-    const gameModes = await MKGameMode.find().select("-__v");
-    res.status(200).json(gameModes);
+    const name = req.query.name;
+    if (name) {
+      const gameMode = await MKGameMode.findOne({ name: name }).select("-__v");
+      if (!gameMode) {
+        return res.status(404).json({ error: "Game mode not found" });
+      }
+      res.status(200).json(gameMode);
+    } else {
+      const gameModes = await MKGameMode.find().select("-__v");
+      res.status(200).json(gameModes);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -67,7 +76,9 @@ router.put(
       const { _id, name, description } = req.body;
 
       const updatedGameMode = new MKGameMode({
-        _id, name, description
+        _id,
+        name,
+        description,
       });
 
       const gameMode = await MKGameMode.findByIdAndUpdate(id, updatedGameMode, {
