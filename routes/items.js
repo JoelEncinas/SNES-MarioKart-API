@@ -10,9 +10,6 @@ const checkHeader = require("../middleware/checkHeader");
 // utils
 const toFilename = require("../utils/toFileName");
 
-// page url
-const url = "https://snes-smk.onrender.com/api";
-
 router.get("/items", async (req, res) => {
   try {
     const name = req.query.name;
@@ -90,7 +87,7 @@ router.put(
       });
 
       if (name) {
-        updatedItem.image = `${url}/images/${toFilename(name, false)}`;
+        updatedItem.image = `${process.env.URL}/images/${toFilename(name, false)}`;
       }
 
       const item = await MKItem.findByIdAndUpdate(id, updatedItem, {

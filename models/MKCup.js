@@ -15,4 +15,4 @@ mkCupSchema.pre("save", function (next) {
   next();
 });
 
-module.exports = mongoose.model("MKCupSchema", mkCupSchema);
+module.exports = mongoose.model("MKCup", mkCupSchema);

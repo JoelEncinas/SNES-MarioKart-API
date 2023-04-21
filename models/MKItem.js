@@ -14,7 +14,7 @@ const mkItemSchema = new mongoose.Schema({
 mkItemSchema.pre("save", function (next) {
   const filename = toFilename(this.name, false);
 
-  this.image = `https://snes-smk.onrender.com/api/images/${filename}`;
+  this.image = `${process.env.URL}/${filename}`;
   next();
 });
 

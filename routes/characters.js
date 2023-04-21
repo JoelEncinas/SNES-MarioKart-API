@@ -7,10 +7,24 @@ const MKCharacter = require("../models/MKCharacter");
 // auth middleware
 const checkHeader = require("../middleware/checkHeader");
 
+// utils
+const toFilename = require("../utils/toFileName");
+
 router.get("/characters", async (req, res) => {
   try {
-    const characters = await MKCharacter.find().select("-__v");
-    res.status(200).json(characters);
+    const name = req.query.name;
+    if (name) {
+      const character = await MKCharacter.findOne({ name: name }).select(
+        "-__v"
+      );
+      if (!character) {
+        return res.status(404).json({ error: "Character not found" });
+      }
+      res.status(200).json(character);
+    } else {
+      const characters = await MKCharacter.find().select("-__v");
+      res.status(200).json(characters);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -77,7 +91,10 @@ router.put(
       });
 
       if (name) {
-        updatedCharacter.animatedImage = `/images/${toFilename(name, true)}`;
+        updatedCharacter.image = `${process.env.URL}/images/${toFilename(
+          name,
+          true
+        )}`;
       }
 
       const character = await MKCharacter.findByIdAndUpdate(

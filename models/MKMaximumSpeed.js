@@ -33,4 +33,4 @@ const mkMaximumSpeedSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("MKMaximumSpeedSchema", mkMaximumSpeedSchema);
+module.exports = mongoose.model("MKMaximumSpeed", mkMaximumSpeedSchema);

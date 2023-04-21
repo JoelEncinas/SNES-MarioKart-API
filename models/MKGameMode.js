@@ -9,4 +9,4 @@ const mkGameModeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("MKGameModeSchema", mkGameModeSchema);
+module.exports = mongoose.model("MKGameMode", mkGameModeSchema);

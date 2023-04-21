@@ -10,4 +10,4 @@ const mkRivalSchema = new mongoose.Schema({
   verySlow: { type: [Number], ref: "MKCharacter", required: true },
 });
 
-module.exports = mongoose.model("MKRivalSchema", mkRivalSchema);
+module.exports = mongoose.model("MKRival", mkRivalSchema);
