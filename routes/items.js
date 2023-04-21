@@ -7,10 +7,22 @@ const MKItem = require("../models/MKItem");
 // auth middleware
 const checkHeader = require("../middleware/checkHeader");
 
+// page url
+const url = "https://snes-smk.onrender.com/api";
+
 router.get("/items", async (req, res) => {
   try {
-    const items = await MKItem.find().select("-__v");
-    res.status(200).json(items);
+    const name = req.query.name;
+    if (name) {
+      const item = await MKItem.findOne({ name: name }).select("-__v");
+      if (!item) {
+        return res.status(404).json({ error: "Item not found" });
+      }
+      res.status(200).json(item);
+    } else {
+      const items = await MKItem.find().select("-__v");
+      res.status(200).json(items);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -75,7 +87,7 @@ router.put(
       });
 
       if (name) {
-        updatedItem.image = `/images/${toFilename(name, false)}`;
+        updatedItem.image = `${url}/images/${toFilename(name, false)}`;
       }
 
       const item = await MKItem.findByIdAndUpdate(id, updatedItem, {
