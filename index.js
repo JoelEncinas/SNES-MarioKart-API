@@ -15,13 +15,28 @@ app.use(express.static("public"));
 
 // routes
 const imagesRoutes = require("./routes/images");
+const categoriesRoutes = require("./routes/categories");
 const charactersRoutes = require("./routes/characters");
+const coursesRoutes = require("./routes/courses");
+const cupsRoutes = require("./routes/cups");
+const gameModesRoutes = require("./routes/gameModes");
 const itemsRoutes = require("./routes/items");
-const nonPlayableRoutes = require("./routes/nonPlayable");
-app.use("/api/", imagesRoutes);
-app.use("/api/", charactersRoutes);
-app.use("/api/", itemsRoutes);
-app.use("/api/", nonPlayableRoutes);
+const maximumSpeedsRoutes = require("./routes/maximumSpeeds");
+const nonPlayablesRoutes = require("./routes/nonPlayables");
+const rivalsRoutes = require("./routes/rivals");
+app.use(
+  "/api/",
+  imagesRoutes,
+  categoriesRoutes,
+  charactersRoutes,
+  coursesRoutes,
+  cupsRoutes,
+  gameModesRoutes,
+  itemsRoutes,
+  maximumSpeedsRoutes,
+  nonPlayablesRoutes,
+  rivalsRoutes
+);
 
 // mongodb
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.pug2uxj.mongodb.net/?retryWrites=true&w=majority`;
