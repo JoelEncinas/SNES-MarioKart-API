@@ -9,8 +9,17 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/rivals", async (req, res) => {
   try {
-    const rivals = await MKRival.find().select("-__v");
-    res.status(200).json(rivals);
+    const id = req.query.id;
+    if (id) {
+      const rival = await MKRival.findOne({ character: id }).select("-__v");
+      if (!rival) {
+        return res.status(404).json({ error: "Character not found" });
+      }
+      res.status(200).json(rival);
+    } else {
+      const rivals = await MKRival.find().select("-__v");
+      res.status(200).json(rivals);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",

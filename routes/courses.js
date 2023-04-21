@@ -9,8 +9,17 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/courses", async (req, res) => {
   try {
-    const courses = await MKCourse.find().select("-__v");
-    res.status(200).json(courses);
+    const name = req.query.name;
+    if (name) {
+      const course = await MKCourse.findOne({ name: name }).select("-__v");
+      if (!course) {
+        return res.status(404).json({ error: "Course not found" });
+      }
+      res.status(200).json(course);
+    } else {
+      const courses = await MKCourse.find().select("-__v");
+      res.status(200).json(courses);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -83,14 +92,14 @@ router.put(
       });
 
       if (name) {
-        updatedCourse.image = `/images/${toFilename(name, false)}`;
+        updatedCourse.image = `${process.env.URL}/images/${toFilename(name, false)}`;
       }
 
       const course = await MKCourse.findByIdAndUpdate(id, updatedCourse, {
         new: true,
       });
       if (!course) {
-        return res.status(404).json({ error: "course not found" });
+        return res.status(404).json({ error: "Course not found" });
       }
       res.status(200).json({
         message: "Course updated successfully",

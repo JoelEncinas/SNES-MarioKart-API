@@ -9,8 +9,19 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/non-playables", async (req, res) => {
   try {
-    const nonPlayables = await MKNonPlayable.find().select("-__v");
-    res.status(200).json(nonPlayables);
+    const name = req.query.name;
+    if (name) {
+      const nonPlayable = await MKNonPlayable.findOne({ name: name }).select(
+        "-__v"
+      );
+      if (!nonPlayable) {
+        return res.status(404).json({ error: "Non playable not found" });
+      }
+      res.status(200).json(nonPlayable);
+    } else {
+      const nonPlayables = await MKNonPlayable.find().select("-__v");
+      res.status(200).json(nonPlayables);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -75,7 +86,10 @@ router.put(
       });
 
       if (name) {
-        updatedNonPlayable.image = `/images/${toFilename(name, false)}`;
+        updatedNonPlayable.image = `${process.env.URL}/images/${toFilename(
+          name,
+          false
+        )}`;
       }
 
       const nonPlayable = await MKNonPlayable.findByIdAndUpdate(

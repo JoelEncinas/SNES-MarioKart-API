@@ -23,7 +23,7 @@ const mkCharacterSchema = new mongoose.Schema({
 mkCharacterSchema.pre("save", function (next) {
   const filename = toFilename(this.name, true);
 
-  this.animatedImage = `/images/${filename}`;
+  this.animatedImage = `${process.env.URL}/${filename}`;
   next();
 });
 

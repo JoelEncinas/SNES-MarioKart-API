@@ -11,7 +11,7 @@ const mkCupSchema = new mongoose.Schema({
 mkCupSchema.pre("save", function (next) {
   const filename = toFilename(this.name, false);
 
-  this.image = `/images/${filename}`;
+  this.image = `${process.env.URL}/${filename}`;
   next();
 });
 

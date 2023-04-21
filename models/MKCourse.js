@@ -4,7 +4,7 @@ const toFilename = require("../utils/toFileName");
 const mkCourseSchema = new mongoose.Schema({
   _id: { type: Number, required: true },
   name: { type: String, required: true },
-  cup: { type: [Number], ref: "MKCup" },
+  cup: { type: Number, ref: "MKCup" },
   terrain: {
     type: String,
     required: true,
@@ -26,7 +26,7 @@ const mkCourseSchema = new mongoose.Schema({
 mkCourseSchema.pre("save", function (next) {
   const filename = toFilename(this.name, false);
 
-  this.image = `/images/${filename}`;
+  this.image = `${process.env.URL}/${filename}`;
   next();
 });
 

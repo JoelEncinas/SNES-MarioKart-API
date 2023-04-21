@@ -9,8 +9,17 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/cups", async (req, res) => {
   try {
-    const cups = await MKCup.find().select("-__v");
-    res.status(200).json(cups);
+    const name = req.query.name;
+    if (name) {
+      const cup = await MKCup.findOne({ name: name }).select("-__v");
+      if (!cup) {
+        return res.status(404).json({ error: "Cup not found" });
+      }
+      res.status(200).json(cup);
+    } else {
+      const cups = await MKCup.find().select("-__v");
+      res.status(200).json(cups);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
@@ -73,7 +82,10 @@ router.put(
       });
 
       if (name) {
-        updatedCup.image = `/images/${toFilename(name, false)}`;
+        updatedCup.image = `${process.env.URL}/images/${toFilename(
+          name,
+          false
+        )}`;
       }
 
       const cup = await MKCup.findByIdAndUpdate(id, updatedCup, {

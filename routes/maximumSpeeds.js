@@ -9,8 +9,19 @@ const checkHeader = require("../middleware/checkHeader");
 
 router.get("/maximum-speeds", async (req, res) => {
   try {
-    const maximumSpeeds = await MKMaximumSpeed.find().select("-__v");
-    res.status(200).json(maximumSpeeds);
+    const id = req.query.id;
+    if (id) {
+      const maximumSpeed = await MKMaximumSpeed.findOne({ character: id }).select(
+        "-__v"
+      );
+      if (!maximumSpeed) {
+        return res.status(404).json({ error: "Character not found" });
+      }
+      res.status(200).json(maximumSpeed);
+    } else {
+      const maximumSpeeds = await MKMaximumSpeed.find().select("-__v");
+      res.status(200).json(maximumSpeeds);
+    }
   } catch (err) {
     res.status(500).json({
       error: "Server error",
