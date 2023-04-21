@@ -5,9 +5,6 @@ const checkHeader = require("../middleware/checkHeader");
 // models
 const MKNonPlayable = require("../models/MKNonPlayable");
 
-// images route
-const imgRoute = "http://127.0.0.1:3000/api/images/";
-
 router.get(
   "/non-playables",
   // auth
@@ -41,14 +38,13 @@ router.get("/non-playables/:id", async (req, res) => {
 
 router.post("/non-playables", async (req, res) => {
   try {
-    const { _id, name, courses, description, image } = req.body;
+    const { _id, name, courses, description } = req.body;
 
     const newNonPlayable = new MKNonPlayable({
       _id,
       name,
       courses,
       description,
-      image,
     });
 
     const savedNonPlayable = await newNonPlayable.save();
@@ -56,7 +52,7 @@ router.post("/non-playables", async (req, res) => {
     res.status(201).json(savedNonPlayable);
   } catch (err) {
     res.status(500).json({
-      error: "Server error",
+      error: err,
     });
   }
 });

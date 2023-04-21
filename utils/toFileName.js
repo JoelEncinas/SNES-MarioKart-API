@@ -1,7 +1,6 @@
 const toFilename = function (str, isGif) {
-  return str.replace(".", "").replace(/\s/g, "-").toLowerCase() + isGif
-    ? ".gif"
-    : ".png";
+  let url = str.replace(".", "").replace(/\s/g, "-").toLowerCase();
+  return url + (isGif === true ? ".gif" : ".png");
 };
 
 module.exports = toFilename;
