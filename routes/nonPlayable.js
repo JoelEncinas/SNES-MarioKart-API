@@ -38,13 +38,14 @@ router.get("/non-playables/:id", async (req, res) => {
 
 router.post("/non-playables", async (req, res) => {
   try {
-    const { _id, name, courses, description } = req.body;
+    const { _id, name, courses, description, image } = req.body;
 
     const newNonPlayable = new MKNonPlayable({
       _id,
       name,
       courses,
       description,
+      image,
     });
 
     const savedNonPlayable = await newNonPlayable.save();
