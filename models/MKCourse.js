@@ -20,6 +20,10 @@ const mkCourseSchema = new mongoose.Schema({
     required: true,
   },
   character: { type: Number, ref: "MKCharacter", required: true },
+  image: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("MKCourse", mkCourseSchema);

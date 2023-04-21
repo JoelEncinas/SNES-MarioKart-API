@@ -14,6 +14,10 @@ const mkCharacterSchema = new mongoose.Schema({
     handling: { type: Number, required: true },
   },
   cpuItem: { type: Number, ref: "MKItem", required: true },
+  animatedImage: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("MKCharacter", mkCharacterSchema);
