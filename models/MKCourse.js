@@ -1,19 +1,25 @@
 const mongoose = require("mongoose");
 
-const mkCharacterSchema = new mongoose.Schema({
+const mkCourseSchema = new mongoose.Schema({
   _id: { type: Number, required: true },
   name: { type: String, required: true },
   category: {
     type: String,
     required: true,
   },
-  stats: {
-    acceleration: { type: Number, required: true },
-    topSpeed: { type: Number, required: true },
-    weight: { type: Number, required: true },
-    handling: { type: Number, required: true },
+  terrain: {
+    type: String,
+    required: true,
   },
-  cpuItem: { type: Number, ref: "MKItem", required: true },
+  slipperiness: {
+    type: String,
+    required: true,
+  },
+  obstacles: {
+    type: [String],
+    required: true,
+  },
+  character: { type: Number, ref: "MKCharacter", required: true },
 });
 
-module.exports = mongoose.model("MKCharacter", mkCharacterSchema);
+module.exports = mongoose.model("MKCourse", mkCourseSchema);

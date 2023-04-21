@@ -5,6 +5,9 @@ const checkHeader = require("../middleware/checkHeader");
 // models
 const MKNonPlayable = require("../models/MKNonPlayable");
 
+// images route
+const imgRoute = "http://127.0.0.1:3000/api/images/";
+
 router.get(
   "/non-playables",
   // auth
