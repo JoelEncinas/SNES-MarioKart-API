@@ -1,0 +1,21 @@
+@font-face {
+    font-family: mario;
+    src: url(../fonts/SuperMario.ttf);
+}
+
+@font-face {
+    font-family: mario-pixel;
+    src: url(../fonts/SuperMarioPixel.ttf);
+}
+
+h1 {
+    font-family: mario;
+}
+
+p {
+    font-family: mario-pixel;
+}
+
+.btn {
+    font-family: mario-pixel;
+}

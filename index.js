@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 const limiter = require("./middleware/rateLimiter");
 require("dotenv").config();
 
@@ -38,6 +39,9 @@ app.use(
   rivalsRoutes
 );
 
+app.get("/", async (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/index.html"));
+});
 // mongodb
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.pug2uxj.mongodb.net/?retryWrites=true&w=majority`;
 mongoose
