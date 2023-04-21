@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const limiter = require("./middleware/rateLimiter")
+const limiter = require("./middleware/rateLimiter");
 require("dotenv").config();
 
 // middleware
@@ -14,9 +14,11 @@ app.use(cors());
 app.use(express.static("public"));
 
 // routes
+const imagesRoutes = require("./routes/images");
 const charactersRoutes = require("./routes/characters");
 const itemsRoutes = require("./routes/items");
 const nonPlayableRoutes = require("./routes/nonPlayable");
+app.use("/api/", imagesRoutes);
 app.use("/api/", charactersRoutes);
 app.use("/api/", itemsRoutes);
 app.use("/api/", nonPlayableRoutes);
