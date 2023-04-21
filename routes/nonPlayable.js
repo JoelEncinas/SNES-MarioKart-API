@@ -7,7 +7,8 @@ const MKNonPlayable = require("../models/MKNonPlayable");
 
 router.get(
   "/non-playables",
-  checkHeader("mk-token", process.env.TOKEN_ACCESS),
+  // auth
+  // checkHeader("mk-token", process.env.TOKEN_ACCESS),
   async (req, res) => {
     try {
       const nonPlayables = await MKNonPlayable.find().select("-__v");
@@ -37,12 +38,12 @@ router.get("/non-playables/:id", async (req, res) => {
 
 router.post("/non-playables", async (req, res) => {
   try {
-    const { _id, name, location, description } = req.body;
+    const { _id, name, courses, description } = req.body;
 
     const newNonPlayable = new MKNonPlayable({
       _id,
       name,
-      location,
+      courses,
       description,
     });
 

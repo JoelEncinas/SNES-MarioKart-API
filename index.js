@@ -10,6 +10,9 @@ app.use(express.json());
 app.use(cors());
 // app.use(limiter);
 
+// serve images
+app.use(express.static("public"));
+
 // routes
 const charactersRoutes = require("./routes/characters");
 const itemsRoutes = require("./routes/items");
