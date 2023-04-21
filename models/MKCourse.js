@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const toFilename = require("../utils/toFileName");
 
 const mkCourseSchema = new mongoose.Schema({
   _id: { type: Number, required: true },
@@ -22,8 +23,14 @@ const mkCourseSchema = new mongoose.Schema({
   character: { type: Number, ref: "MKCharacter", required: true },
   image: {
     type: String,
-    required: true,
   },
+});
+
+mkCourseSchema.pre("save", function (next) {
+  const filename = toFilename(this.name, false);
+
+  this.image = `/images/${filename}`;
+  next();
 });
 
 module.exports = mongoose.model("MKCourse", mkCourseSchema);

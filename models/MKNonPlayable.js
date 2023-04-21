@@ -19,7 +19,6 @@ const mkNonPlayableSchema = new mongoose.Schema({
 });
 
 mkNonPlayableSchema.pre("save", function (next) {
-
   const filename = toFilename(this.name, false);
   console.log(filename);
 
