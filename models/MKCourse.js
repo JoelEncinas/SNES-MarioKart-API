@@ -4,10 +4,7 @@ const toFilename = require("../utils/toFileName");
 const mkCourseSchema = new mongoose.Schema({
   _id: { type: Number, required: true },
   name: { type: String, required: true },
-  category: {
-    type: String,
-    required: true,
-  },
+  cup: { type: [Number], ref: "MKCup" },
   terrain: {
     type: String,
     required: true,
