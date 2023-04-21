@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const mkRivalSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
   character: { type: Number, ref: "MKCharacter", required: true },
   veryFast: { type: Number, ref: "MKCharacter", required: true },
   fast: { type: Number, ref: "MKCharacter", required: true },

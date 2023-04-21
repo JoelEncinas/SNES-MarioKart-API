@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const mkMaximumSpeedSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
   character: { type: Number, ref: "MKCharacter", required: true },
   normalRoad: {
     type: Number,
