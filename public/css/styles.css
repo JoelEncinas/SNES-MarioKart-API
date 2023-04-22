@@ -16,12 +16,28 @@ h1 {
     font-family: mario;
 }
 
-p {
+h2,
+h3 {
+    font-family: monospace;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+p,
+a,
+span {
     font-family: mario-pixel;
 }
 
-.small-font {
+p,
+a {
     font-size: 14px;
+}
+
+.small-font {
+    font-size: 10px;
 }
 
 /* NAVBAR */
@@ -40,4 +56,8 @@ p {
 #page-content-wrapper {
     margin-left: 220px;
     scroll-behavior: smooth;
+}
+
+.accordion-header-get {
+    border: 3px solid #469408;
 }
