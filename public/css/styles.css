@@ -42,6 +42,13 @@ a {
 
 /* NAVBAR */
 
+.top-link {
+    text-decoration: none;
+    position: fixed;
+    left: 30px;
+    bottom: 15px;
+}
+
 #made-by,
 #wiki-info {
     padding: 5px 1rem 5px 1rem !important;
@@ -56,7 +63,7 @@ a {
     border-bottom: 1px solid #ebebeb;
 }
 
-#toggle-switch-label{
+#toggle-switch-label {
     font-family: mario-pixel;
     font-size: 12px;
     position: relative;
