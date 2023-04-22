@@ -596,42 +596,44 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="game-modes">/api/game-modes</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/game-modes"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/game-modes</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all game modes in the game.
+            </div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="game-modes-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="game-modes-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#game-modes-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="game-modes-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="game-modes-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="game-modes-get-heading"
+                  data-bs-parent="#game-modes-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [game-mode]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -644,7 +646,9 @@
                         <tr>
                           <td>name</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>
+                            Name of the game mode you want information about.
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -655,35 +659,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="game-modes-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="game-modes-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#game-modes-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="game-modes-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="game-modes-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="game-modes-post-heading"
+                  data-bs-parent="#game-modes-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Item property
-                      <code>image</code> gets auto-generated.
+                      key for authorization.
                     </div>
                   </div>
                 </div>
@@ -692,42 +695,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/game-modes/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/game-modes/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/game-modes/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a single game mode by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="game-modes-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="game-modes-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#game-modes-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="game-modes-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="game-modes-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="game-modes-get-byid-heading"
+                  data-bs-parent="#game-modes-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: game-mode</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -748,14 +751,6 @@
                           <td>description</td>
                           <td>String</td>
                         </tr>
-                        <tr>
-                          <td>notes</td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td>image</td>
-                          <td>String</td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -765,35 +760,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="game-modes-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="game-modes-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#game-modes-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="game-modes-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="game-modes-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="game-modes-put-heading"
+                  data-bs-parent="#game-modes-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Must include all fields except
-                      <code>image</code> which gets auto-generated.
+                      key for authorization. Must include all fields.
                     </div>
                   </div>
                 </div>
@@ -802,29 +796,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="game-modes-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="game-modes-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#game-modes-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="game-modes-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="game-modes-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="game-modes-delete-heading"
+                  data-bs-parent="#game-modes-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -839,58 +833,44 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="categories">/api/categories</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/categories"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/categories</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all cc categories in the game.
+            </div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="categories-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="categories-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#categories-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="categories-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="categories-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="categories-get-heading"
+                  data-bs-parent="#categories-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
-                    <table class="table table-flush">
-                      <thead>
-                        <tr>
-                          <th scope="col">Param</th>
-                          <th scope="col">Required</th>
-                          <th scope="col">Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>name</td>
-                          <td>❌</td>
-                          <td>Name of the item you want information about.</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="pb-3">Return value: [category]</div>
                   </div>
                 </div>
               </div>
@@ -898,35 +878,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="categories-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="categories-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#categories-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="categories-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="categories-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="categories-post-heading"
+                  data-bs-parent="#categories-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Item property
-                      <code>image</code> gets auto-generated.
+                      key for authorization.
                     </div>
                   </div>
                 </div>
@@ -935,42 +914,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/categories/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/categories/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/categories/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a single cc category by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="categories-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="categories-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#categories-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="categories-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="categories-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="categories-get-byid-heading"
+                  data-bs-parent="#categories-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: category</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -984,19 +963,7 @@
                           <td>Number</td>
                         </tr>
                         <tr>
-                          <td>name</td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td>description</td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td>notes</td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td>image</td>
+                          <td>speed</td>
                           <td>String</td>
                         </tr>
                       </tbody>
@@ -1008,35 +975,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="categories-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="categories-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#categories-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="categories-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="categories-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="categories-put-heading"
+                  data-bs-parent="#categories-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Must include all fields except
-                      <code>image</code> which gets auto-generated.
+                      key for authorization. Must include all fields.
                     </div>
                   </div>
                 </div>
@@ -1045,29 +1011,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="categories-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="categories-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#categories-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="categories-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="categories-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="categories-delete-heading"
+                  data-bs-parent="#categories-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1082,42 +1048,42 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="cups">/api/cups</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/cups"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/cups</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">Has information about all cups in the game.</div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="cups-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="cups-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#cups-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="cups-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="cups-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="cups-get-heading"
+                  data-bs-parent="#cups-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [cup]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1130,7 +1096,7 @@
                         <tr>
                           <td>name</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>Name of the cup you want information about.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -1141,29 +1107,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="cups-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="cups-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#cups-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="cups-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="cups-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="cups-post-heading"
+                  data-bs-parent="#cups-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1178,42 +1144,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/cups/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/cups/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/cups/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a cup item by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="cups-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="cups-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#cups-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="cups-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="cups-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="cups-get-byid-heading"
+                  data-bs-parent="#cups-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: cup</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1231,12 +1197,8 @@
                           <td>String</td>
                         </tr>
                         <tr>
-                          <td>description</td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td>notes</td>
-                          <td>String</td>
+                          <td>courses</td>
+                          <td>[Number]</td>
                         </tr>
                         <tr>
                           <td>image</td>
@@ -1251,29 +1213,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="cups-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="cups-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#cups-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="cups-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="cups-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="cups-put-heading"
+                  data-bs-parent="#cups-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1288,29 +1250,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="cups-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="cups-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#cups-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="cups-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="cups-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="cups-delete-heading"
+                  data-bs-parent="#cups-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1325,42 +1287,44 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="courses">/api/courses</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/courses"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/courses</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all courses in the game.
+            </div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="courses-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="courses-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#courses-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="courses-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="courses-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="courses-get-heading"
+                  data-bs-parent="#courses-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [course]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1373,7 +1337,9 @@
                         <tr>
                           <td>name</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>
+                            Name of the course you want information about.
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -1384,29 +1350,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="courses-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="courses-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#courses-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="courses-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="courses-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="courses-post-heading"
+                  data-bs-parent="#courses-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1421,42 +1387,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/courses/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/courses/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/courses/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a single course by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="courses-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="courses-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#courses-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="courses-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="courses-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="courses-get-byid-heading"
+                  data-bs-parent="#courses-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: course</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1474,12 +1440,24 @@
                           <td>String</td>
                         </tr>
                         <tr>
-                          <td>description</td>
+                          <td>cup</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>terrain</td>
                           <td>String</td>
                         </tr>
                         <tr>
-                          <td>notes</td>
+                          <td>sliperiness</td>
                           <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>obstacles</td>
+                          <td>[String]</td>
+                        </tr>
+                        <tr>
+                          <td>character</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
                           <td>image</td>
@@ -1494,29 +1472,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="courses-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="courses-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#courses-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="courses-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="courses-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="courses-put-heading"
+                  data-bs-parent="#courses-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1531,29 +1509,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="courses-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="courses-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#courses-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="courses-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="courses-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="courses-delete-heading"
+                  data-bs-parent="#courses-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1568,42 +1546,44 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="non-playables">/api/non-playables</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/non-playables"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/non-playables</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all non-playables in the game.
+            </div>
 
             <div class="accordion accordion-flush" id="items-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="non-playables-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#non-playables-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="non-playables-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="non-playables-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="non-playables-get-heading"
+                  data-bs-parent="#non-playables-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [non-playable]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1616,7 +1596,9 @@
                         <tr>
                           <td>name</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>
+                            Name of the non-playable you want information about.
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -1627,29 +1609,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="non-playables-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="non-playables-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#non-playables-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="non-playables-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="non-playables-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="non-playables-post-heading"
+                  data-bs-parent="#non-playables-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1664,42 +1646,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/non-playables/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/non-playables/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/non-playables/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a non-playable item by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="non-playables-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="non-playables-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#non-playables-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="non-playables-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="non-playables-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="non-playables-get-byid-heading"
+                  data-bs-parent="#non-playables-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: non-playable</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1717,11 +1699,11 @@
                           <td>String</td>
                         </tr>
                         <tr>
-                          <td>description</td>
-                          <td>String</td>
+                          <td>courses</td>
+                          <td>[Number]</td>
                         </tr>
                         <tr>
-                          <td>notes</td>
+                          <td>description</td>
                           <td>String</td>
                         </tr>
                         <tr>
@@ -1737,29 +1719,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="non-playables-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="non-playables-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#non-playables-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="non-playables-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="non-playables-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="non-playables-put-heading"
+                  data-bs-parent="#non-playables-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1774,29 +1756,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="non-playables-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="non-playables-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#non-playables-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="non-playables-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="non-playables-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="non-playables-delete-heading"
+                  data-bs-parent="#non-playables-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -1811,42 +1793,46 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="maximum-speeds">
+              /api/maximum-speeds
+            </h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/maximum-speeds"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/maximum-speeds</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all maximum-speeds of each character.
+            </div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="maximum-speeds-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="maximum-speeds-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#maximum-speeds-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="maximum-speeds-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="maximum-speeds-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="maximum-speeds-get-heading"
+                  data-bs-parent="#maximum-speeds-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [maximum-speed]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1857,9 +1843,11 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>name</td>
+                          <td>id</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>
+                            id of the character you want information about.
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -1870,35 +1858,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="maximum-speeds-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="maximum-speeds-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#maximum-speeds-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="maximum-speeds-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="maximum-speeds-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="maximum-speeds-post-heading"
+                  data-bs-parent="#maximum-speeds-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Item property
-                      <code>image</code> gets auto-generated.
+                      key for authorization.
                     </div>
                   </div>
                 </div>
@@ -1907,42 +1894,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/maximum-speeds/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/maximum-speeds/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/maximum-speeds/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a single maximum-speed row by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="maximum-speeds-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="maximum-speeds-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#maximum-speeds-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="maximum-speeds-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="maximum-speeds-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="maximum-speeds-get-byid-heading"
+                  data-bs-parent="#maximum-speeds-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: maximum-speed</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -1956,20 +1943,36 @@
                           <td>Number</td>
                         </tr>
                         <tr>
-                          <td>name</td>
-                          <td>String</td>
+                          <td>character</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>description</td>
-                          <td>String</td>
+                          <td>normalRoad</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>notes</td>
-                          <td>String</td>
+                          <td>circuitSand</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>image</td>
-                          <td>String</td>
+                          <td>chocoIslandRocks</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>chocoIslandMud</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>donutPlainsGrass</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>koopaBeachWater</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>vanillaLakeSnow</td>
+                          <td>Number</td>
                         </tr>
                       </tbody>
                     </table>
@@ -1980,35 +1983,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="maximum-speeds-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="maximum-speeds-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#maximum-speeds-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="maximum-speeds-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="maximum-speeds-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="maximum-speeds-put-heading"
+                  data-bs-parent="#maximum-speeds-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Must include all fields except
-                      <code>image</code> which gets auto-generated.
+                      key for authorization. Must include all fields.
                     </div>
                   </div>
                 </div>
@@ -2017,29 +2019,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="maximum-speeds-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="maximum-speeds-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#maximum-speeds-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="maximum-speeds-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="maximum-speeds-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="maximum-speeds-delete-heading"
+                  data-bs-parent="#maximum-speeds-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
@@ -2054,42 +2056,44 @@
           <!-- end of section-->
 
           <div class="pb-5">
-            <h2 class="text-primary" id="items">/api/items</h2>
+            <h2 class="text-primary" id="rivals">/api/rivals</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items"
+                href="/api/rivals"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items</a
+                >https://www.snes-mk.onrender.com/api/rivals</a
               >
             </h3>
-            <div class="pb-3">Has information about all items in the game.</div>
+            <div class="pb-3">
+              Has information about all rivals for each character.
+            </div>
 
-            <div class="accordion accordion-flush" id="items-get">
+            <div class="accordion accordion-flush" id="rivals-get">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-heading"
+                  id="rivals-get-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-collapse"
+                    data-bs-target="#rivals-get-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-collapse"
+                    aria-controls="rivals-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-collapse"
+                  id="rivals-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-heading"
-                  data-bs-parent="#items-get"
+                  aria-labelledby="rivals-get-heading"
+                  data-bs-parent="#rivals-get"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: [item]</div>
+                    <div class="pb-3">Return value: [rival]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -2100,9 +2104,9 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>name</td>
+                          <td>id</td>
                           <td>❌</td>
-                          <td>Name of the item you want information about.</td>
+                          <td>id of the character you want the rivals of.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -2113,35 +2117,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-post"
+              id="rivals-post"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-post"
-                  id="items-post-heading"
+                  id="rivals-post-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-post-collapse"
+                    data-bs-target="#rivals-post-collapse"
                     aria-expanded="false"
-                    aria-controls="items-post-collapse"
+                    aria-controls="rivals-post-collapse"
                   >
                     POST
                   </button>
                 </h2>
                 <div
-                  id="items-post-collapse"
+                  id="rivals-post-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-post-heading"
-                  data-bs-parent="#items-post"
+                  aria-labelledby="rivals-post-heading"
+                  data-bs-parent="#rivals-post"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Item property
-                      <code>image</code> gets auto-generated.
+                      key for authorization.
                     </div>
                   </div>
                 </div>
@@ -2150,42 +2153,42 @@
           </div>
 
           <div class="pb-5">
-            <h2 class="text-primary">/api/items/{id}</h2>
+            <h2 class="text-primary">/api/rivals/{id}</h2>
             <h3 class="mb-3">
               <a
                 class="monospace text-secondary"
-                href="/api/items/1"
+                href="/api/rivals/1"
                 target="_blank"
-                >https://www.snes-mk.onrender.com/api/items/1</a
+                >https://www.snes-mk.onrender.com/api/rivals/1</a
               >
             </h3>
-            <div class="pb-3">Retrieve a single item by id.</div>
+            <div class="pb-3">Retrieve a single rival row by id.</div>
 
-            <div class="accordion accordion-flush" id="items-get-byid">
+            <div class="accordion accordion-flush" id="rivals-get-byid">
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-get"
-                  id="items-get-byid-heading"
+                  id="rivals-get-byid-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-get-byid-collapse"
+                    data-bs-target="#rivals-get-byid-collapse"
                     aria-expanded="false"
-                    aria-controls="items-get-byid-collapse"
+                    aria-controls="rivals-get-byid-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="items-get-byid-collapse"
+                  id="rivals-get-byid-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-get-byid-heading"
-                  data-bs-parent="#items-get-byid"
+                  aria-labelledby="rivals-get-byid-heading"
+                  data-bs-parent="#rivals-get-byid"
                 >
                   <div class="accordion-body">
-                    <div class="pb-3">Return value: item</div>
+                    <div class="pb-3">Return value: rival</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -2199,20 +2202,28 @@
                           <td>Number</td>
                         </tr>
                         <tr>
-                          <td>name</td>
-                          <td>String</td>
+                          <td>character</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>description</td>
-                          <td>String</td>
+                          <td>veryFast</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>notes</td>
-                          <td>String</td>
+                          <td>fast</td>
+                          <td>Number</td>
                         </tr>
                         <tr>
-                          <td>image</td>
-                          <td>String</td>
+                          <td>medium</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>slow</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>verySlow</td>
+                          <td>Number</td>
                         </tr>
                       </tbody>
                     </table>
@@ -2223,35 +2234,34 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-put"
+              id="rivals-put"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-put"
-                  id="items-put-heading"
+                  id="rivals-put-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-put-collapse"
+                    data-bs-target="#rivals-put-collapse"
                     aria-expanded="false"
-                    aria-controls="items-put-collapse"
+                    aria-controls="rivals-put-collapse"
                   >
                     PUT
                   </button>
                 </h2>
                 <div
-                  id="items-put-collapse"
+                  id="rivals-put-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-put-heading"
-                  data-bs-parent="#items-put"
+                  aria-labelledby="rivals-put-heading"
+                  data-bs-parent="#rivals-put"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
                       *Requires <code>mk-token</code> header with corresponding
-                      key for authorization. Must include all fields except
-                      <code>image</code> which gets auto-generated.
+                      key for authorization. Must include all fields.
                     </div>
                   </div>
                 </div>
@@ -2260,29 +2270,29 @@
 
             <div
               class="accordion accordion-flush dev-route d-none"
-              id="items-delete"
+              id="rivals-delete"
             >
               <div class="accordion-item">
                 <h2
                   class="accordion-header accordion-header-delete"
-                  id="items-delete-heading"
+                  id="rivals-delete-heading"
                 >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#items-delete-collapse"
+                    data-bs-target="#rivals-delete-collapse"
                     aria-expanded="false"
-                    aria-controls="items-delete-collapse"
+                    aria-controls="rivals-delete-collapse"
                   >
                     DELETE
                   </button>
                 </h2>
                 <div
-                  id="items-delete-collapse"
+                  id="rivals-delete-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="items-delete-heading"
-                  data-bs-parent="#items-delete"
+                  aria-labelledby="rivals-delete-heading"
+                  data-bs-parent="#rivals-delete"
                 >
                   <div class="accordion-body">
                     <div class="pb-3">
