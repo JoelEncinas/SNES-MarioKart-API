@@ -11,7 +11,7 @@
     <div class="d-flex" id="wrapper">
       <!-- Sidebar-->
       <div class="border-end bg-white position-fixed" id="sidebar-wrapper">
-        <div class="list-group .list-group-flush">
+        <div class="list-group list-group-flush">
           <a class="list-group-item p-3" href="#"
             ><img src="images/mario-brand.jpg"
           /></a>
@@ -91,34 +91,42 @@
             </p>
           </div>
 
-          <div>
+          <div class="pb-5">
             <h2 id="characters">/api/characters</h2>
             <h3 class="mb-3">
               <a class="monospace text-secondary" href="/api/characters"
                 >https://www.snes-mk.onrender.com/api/characters</a
               >
             </h3>
+            <div class="pb-3">
+              Has information about all playable characters in the game.
+            </div>
+
             <div class="accordion accordion-flush" id="characters-get">
               <div class="accordion-item">
-                <h2 class="accordion-header accordion-header-get" id="headingOne">
+                <h2
+                  class="accordion-header accordion-header-get"
+                  id="characters-get-heading"
+                >
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
+                    data-bs-target="#characters-get-collapse"
                     aria-expanded="false"
-                    aria-controls="collapseOne"
+                    aria-controls="characters-get-collapse"
                   >
                     GET
                   </button>
                 </h2>
                 <div
-                  id="collapseOne"
+                  id="characters-get-collapse"
                   class="accordion-collapse collapse"
-                  aria-labelledby="headingOne"
+                  aria-labelledby="characters-get-heading"
                   data-bs-parent="#characters-get"
                 >
                   <div class="accordion-body">
+                    <div class="pb-3">Return value: [character]</div>
                     <table class="table table-flush">
                       <thead>
                         <tr>
@@ -137,16 +145,189 @@
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    <div class="pt-3">
-                      Has information about all playable characters in the game.
+            <div class="accordion accordion-flush" id="characters-post">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-post"
+                  id="characters-post-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#characters-post-collapse"
+                    aria-expanded="false"
+                    aria-controls="characters-post-collapse"
+                  >
+                    POST
+                  </button>
+                </h2>
+                <div
+                  id="characters-post-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="characters-post-heading"
+                  data-bs-parent="#characters-post"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization. Character property
+                      <code>animatedImage</code> gets auto-generated.
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="pb-5">
+            <h2>/api/characters/{id}</h2>
+            <h3 class="mb-3">
+              <a class="monospace text-secondary" href="/api/characters/1"
+                >https://www.snes-mk.onrender.com/api/characters/1</a
+              >
+            </h3>
+            <div class="pb-3">Retrieve a single character by id.</div>
+
+            <div class="accordion accordion-flush" id="characters-get-byid">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-get"
+                  id="characters-get-byid-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#characters-get-byid-collapse"
+                    aria-expanded="false"
+                    aria-controls="characters-get-byid-collapse"
+                  >
+                    GET
+                  </button>
+                </h2>
+                <div
+                  id="characters-get-byid-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="characters-get-byid-heading"
+                  data-bs-parent="#characters-get-byid"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">Return value: character</div>
+                    <table class="table table-flush">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Data Type</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>_id</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>name</td>
+                          <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>category</td>
+                          <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>stats</td>
+                          <td>Object</td>
+                        </tr>
+                        <tr>
+                          <td>cpuItem</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>animatedImage</td>
+                          <td>String</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="characters-put">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-put"
+                  id="characters-put-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#characters-put-collapse"
+                    aria-expanded="false"
+                    aria-controls="characters-put-collapse"
+                  >
+                    PUT
+                  </button>
+                </h2>
+                <div
+                  id="characters-put-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="characters-put-heading"
+                  data-bs-parent="#characters-put"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization. Must include all fields except
+                      <code>animatedImage</code> which gets auto-generated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="characters-delete">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-delete"
+                  id="characters-delete-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#characters-delete-collapse"
+                    aria-expanded="false"
+                    aria-controls="characters-delete-collapse"
+                  >
+                    DELETE
+                  </button>
+                </h2>
+                <div
+                  id="characters-delete-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="characters-delete-heading"
+                  data-bs-parent="#characters-delete"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of section -->
         </div>
+        <!-- end of docs container -->
       </div>
     </div>
   </body>

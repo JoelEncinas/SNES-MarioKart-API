@@ -61,3 +61,19 @@ a {
 .accordion-header-get {
     border: 3px solid #469408;
 }
+
+.accordion-header-post {
+    border: 3px solid #029acf;
+}
+
+.accordion-header-put {
+    border: 3px solid #d9831f;
+}
+
+.accordion-header-delete {
+    border: 3px solid #d9230f;
+}
+
+.accordion {
+    margin: 5px 0;
+}
