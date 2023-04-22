@@ -42,13 +42,42 @@ a {
 
 /* NAVBAR */
 
-#made-by {
-    padding: 10px 1rem 0 1rem !important;
+#made-by,
+#wiki-info {
+    padding: 5px 1rem 5px 1rem !important;
 }
 
 #wiki-info {
     border-bottom: 1px solid #bebebe;
-    padding: 0 1rem 10px 1rem !important;
+}
+
+#dev-mode-toggle {
+    padding: 10px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+#toggle-switch-label{
+    font-family: mario-pixel;
+    font-size: 12px;
+    position: relative;
+    left: 15px;
+    bottom: -4px;
+}
+
+#toggleSwitch:hover {
+    cursor: pointer;
+}
+
+.form-switch .form-check-input {
+    margin-left: 0.8em;
+}
+
+.form-switch {
+    padding-left: -2em;
+}
+
+.form-check {
+    padding-left: 0;
 }
 
 /* CONTENT*/
