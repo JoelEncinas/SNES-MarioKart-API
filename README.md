@@ -1,5 +1,7 @@
-# 🏎️ SNES Mario Kart API
+# 🍄 SNES Mario Kart API
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="node" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" style="max-width: 100%;"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap" style="max-width: 100%;">
+
+<img src="https://github.com/JoelEncinas/restapi/blob/main/images/SNES_SuperMarioKart.jpg" alt="super mario kart" height="200px" width="100%">
 
 This API provides information about the SNES version of the classic game, Mario Kart. It allows users to retrieve data about various game elements, such as:
 
@@ -25,6 +27,7 @@ Each endpoint returns data in a standard format, such as JSON, that can be easil
     /api/maximum-speeds
     /api/non-playable
     /api/rivals
+    /api/images
 
 ## 📜 TODO
 - implement rate-limit dependency
