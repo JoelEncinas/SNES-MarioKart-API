@@ -40,7 +40,7 @@ app.use(
 );
 
 app.get("/", async (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/index.html"));
+  res.status(200).sendFile(path.join(__dirname, "/views/index.html"));
 });
 // mongodb
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.pug2uxj.mongodb.net/?retryWrites=true&w=majority`;
