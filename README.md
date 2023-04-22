@@ -1,4 +1,6 @@
-# SNES Mario Kart API
+# 🏎️ SNES Mario Kart API
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="node" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" style="max-width: 100%;"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap" style="max-width: 100%;">
+
 This API provides information about the SNES version of the classic game, Mario Kart. It allows users to retrieve data about various game elements, such as:
 
 - Characters: A list of all playable characters in the game, along with their attributes (speed, acceleration, handling and weight).
@@ -11,21 +13,20 @@ This API provides information about the SNES version of the classic game, Mario 
 - Non-playable characters: A list of all non-playable characters in the game, including additional information about them.
 - Rivals: A list of all the in-game rivals that the player competes against during races.
 
-Users can retrieve data by making HTTP requests to various endpoints, such as:
+## 📭 Routes 
+Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized. Users can retrieve data by making HTTP requests to various endpoints, such as:
 
-/api/characters: Returns a list of all playable characters in the game.
-/api/items: Returns a list of all items that can be obtained during races.
-/api/courses: Returns a list of all race tracks in the game.
-/api/cups: Returns a list of all cup competitions in the game.
-/api/categories: Returns a list of all cc categories.
-/api/game-modes: Returns a list of all game modes available in the game.
-/api/maximum-speeds: Returns a list of the maximum speeds on various terrains.
-/api/non-playable: Returns a list of all non-playable characters in the game.
-/api/rivals: Returns a list of all the rivals that the player competes against during races.
+    /api/characters
+    /api/items
+    /api/courses
+    /api/cups
+    /api/categories
+    /api/game-modes
+    /api/maximum-speeds
+    /api/non-playable
+    /api/rivals
 
-Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized.
-
-## todo
+## 📜 TODO
 - implement rate-limit dependency
 - add data
     - cups
