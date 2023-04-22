@@ -20,4 +20,24 @@ p {
     font-family: mario-pixel;
 }
 
+.small-font {
+    font-size: 14px;
+}
+
 /* NAVBAR */
+
+#made-by {
+    padding: 10px 1rem 0 1rem !important;
+}
+
+#wiki-info {
+    border-bottom: 1px solid #bebebe;
+    padding: 0 1rem 10px 1rem !important;
+}
+
+/* CONTENT*/
+
+#page-content-wrapper {
+    margin-left: 220px;
+    scroll-behavior: smooth;
+}
