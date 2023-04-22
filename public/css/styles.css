@@ -1,3 +1,5 @@
+/* FONTS */
+
 @font-face {
     font-family: mario;
     src: url(../fonts/SuperMario.ttf);
@@ -8,6 +10,8 @@
     src: url(../fonts/SuperMarioPixel.ttf);
 }
 
+/* UTILS */
+
 h1 {
     font-family: mario;
 }
@@ -16,6 +20,4 @@ p {
     font-family: mario-pixel;
 }
 
-.btn {
-    font-family: mario-pixel;
-}
+/* NAVBAR */
