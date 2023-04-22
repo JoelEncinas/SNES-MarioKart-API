@@ -37,14 +37,3 @@ Each endpoint returns data in a standard format, such as JSON, that can be easil
 ## 📜 Documentation
 
 Find all the details [here]()
-
-## 📜 TODO
-- add data
-    - cups
-    - courses
-    - modes
-    - non playable
-    - obstacles
-    - terrains max speed
-    - rivals    
-- add examples to page
