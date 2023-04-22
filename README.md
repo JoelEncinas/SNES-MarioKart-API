@@ -36,4 +36,4 @@ Each endpoint returns data in a standard format, such as JSON, that can be easil
 
 ## 📜 Documentation
 
-Find all the details [here]()
+Find all the details [here](https://snes-smk.onrender.com)

@@ -89,6 +89,10 @@ a {
 
 /* CONTENT*/
 
+.container-fluid{
+    max-width: 992px;
+}
+
 #page-content-wrapper {
     margin-left: 220px;
     scroll-behavior: smooth;
