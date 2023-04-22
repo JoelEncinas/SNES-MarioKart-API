@@ -39,7 +39,6 @@ Each endpoint returns data in a standard format, such as JSON, that can be easil
 Find all the details [here]()
 
 ## 📜 TODO
-- implement rate-limit dependency
 - add data
     - cups
     - courses
@@ -48,3 +47,4 @@ Find all the details [here]()
     - obstacles
     - terrains max speed
     - rivals    
+- add examples to page
