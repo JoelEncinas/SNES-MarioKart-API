@@ -34,6 +34,10 @@ Each endpoint returns data in a standard format, such as JSON, that can be easil
     /api/rivals
     /api/images
 
+## 📜 Documentation
+
+Find all the details [here]()
+
 ## 📜 TODO
 - implement rate-limit dependency
 - add data
