@@ -5,6 +5,7 @@
 
 This API provides information about the SNES version of the classic game, Mario Kart. It allows users to retrieve data about various game elements, such as:
 
+
 - Characters: A list of all playable characters in the game, along with their attributes (speed, acceleration, handling and weight).
 - Items: A list of all items that can be obtained during races, along with their effects and how to use them.
 - Courses: A list of all race tracks in the game along with their terrain, slipperiness and obstacles.
@@ -14,6 +15,10 @@ This API provides information about the SNES version of the classic game, Mario 
 - Maximum speeds of karts: A list of all karts in the game and their maximum speeds.
 - Non-playable characters: A list of all non-playable characters in the game, including additional information about them.
 - Rivals: A list of all the in-game rivals that the player competes against during races.
+
+
+*It has a rate limit of 30 requests every 1 minute.*
+
 
 ## 📭 Routes 
 Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized. Users can retrieve data by making HTTP requests to various endpoints, such as:
