@@ -9,7 +9,7 @@ require("dotenv").config();
 // middleware
 app.use(express.json());
 app.use(cors());
-// app.use(limiter);
+app.use(limiter);
 
 // serve images
 app.use(express.static("public"));
@@ -53,6 +53,6 @@ mongoose
   .catch(console.error);
 
 // start the server
-app.listen(3000, () => {
-  console.log("Server listening on port 3000");
+app.listen(5000, () => {
+  console.log("Server listening on port 5000");
 });
