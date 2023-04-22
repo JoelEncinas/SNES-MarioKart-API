@@ -92,9 +92,12 @@
           </div>
 
           <div class="pb-5">
-            <h2 id="characters">/api/characters</h2>
+            <h2 class="text-primary" id="characters">/api/characters</h2>
             <h3 class="mb-3">
-              <a class="monospace text-secondary" href="/api/characters"
+              <a
+                class="monospace text-secondary"
+                href="/api/characters"
+                target="_blank"
                 >https://www.snes-mk.onrender.com/api/characters</a
               >
             </h3>
@@ -186,9 +189,12 @@
           </div>
 
           <div class="pb-5">
-            <h2>/api/characters/{id}</h2>
+            <h2 class="text-primary">/api/characters/{id}</h2>
             <h3 class="mb-3">
-              <a class="monospace text-secondary" href="/api/characters/1"
+              <a
+                class="monospace text-secondary"
+                href="/api/characters/1"
+                target="_blank"
                 >https://www.snes-mk.onrender.com/api/characters/1</a
               >
             </h3>
@@ -326,6 +332,240 @@
             </div>
           </div>
           <!-- end of section -->
+
+          <div class="pb-5">
+            <h2 class="text-primary" id="items">/api/items</h2>
+            <h3 class="mb-3">
+              <a
+                class="monospace text-secondary"
+                href="/api/items"
+                target="_blank"
+                >https://www.snes-mk.onrender.com/api/items</a
+              >
+            </h3>
+            <div class="pb-3">Has information about all items in the game.</div>
+
+            <div class="accordion accordion-flush" id="items-get">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-get"
+                  id="items-get-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-get-collapse"
+                    aria-expanded="false"
+                    aria-controls="items-get-collapse"
+                  >
+                    GET
+                  </button>
+                </h2>
+                <div
+                  id="items-get-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="items-get-heading"
+                  data-bs-parent="#items-get"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">Return value: [item]</div>
+                    <table class="table table-flush">
+                      <thead>
+                        <tr>
+                          <th scope="col">Param</th>
+                          <th scope="col">Required</th>
+                          <th scope="col">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>name</td>
+                          <td>❌</td>
+                          <td>Name of the item you want information about.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="items-post">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-post"
+                  id="items-post-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-post-collapse"
+                    aria-expanded="false"
+                    aria-controls="items-post-collapse"
+                  >
+                    POST
+                  </button>
+                </h2>
+                <div
+                  id="items-post-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="items-post-heading"
+                  data-bs-parent="#items-post"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization. Item property
+                      <code>image</code> gets auto-generated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pb-5">
+            <h2 class="text-primary">/api/items/{id}</h2>
+            <h3 class="mb-3">
+              <a
+                class="monospace text-secondary"
+                href="/api/items/1"
+                target="_blank"
+                >https://www.snes-mk.onrender.com/api/items/1</a
+              >
+            </h3>
+            <div class="pb-3">Retrieve a single item by id.</div>
+
+            <div class="accordion accordion-flush" id="items-get-byid">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-get"
+                  id="items-get-byid-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-get-byid-collapse"
+                    aria-expanded="false"
+                    aria-controls="items-get-byid-collapse"
+                  >
+                    GET
+                  </button>
+                </h2>
+                <div
+                  id="items-get-byid-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="items-get-byid-heading"
+                  data-bs-parent="#items-get-byid"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">Return value: item</div>
+                    <table class="table table-flush">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Data Type</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>_id</td>
+                          <td>Number</td>
+                        </tr>
+                        <tr>
+                          <td>name</td>
+                          <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>description</td>
+                          <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>notes</td>
+                          <td>String</td>
+                        </tr>
+                        <tr>
+                          <td>image</td>
+                          <td>String</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="items-put">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-put"
+                  id="items-put-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-put-collapse"
+                    aria-expanded="false"
+                    aria-controls="items-put-collapse"
+                  >
+                    PUT
+                  </button>
+                </h2>
+                <div
+                  id="items-put-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="items-put-heading"
+                  data-bs-parent="#items-put"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization. Must include all fields except
+                      <code>image</code> which gets auto-generated.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion accordion-flush" id="items-delete">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header accordion-header-delete"
+                  id="items-delete-heading"
+                >
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-delete-collapse"
+                    aria-expanded="false"
+                    aria-controls="items-delete-collapse"
+                  >
+                    DELETE
+                  </button>
+                </h2>
+                <div
+                  id="items-delete-collapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="items-delete-heading"
+                  data-bs-parent="#items-delete"
+                >
+                  <div class="accordion-body">
+                    <div class="pb-3">
+                      *Requires <code>mk-token</code> header with corresponding
+                      key for authorization.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of section-->
         </div>
         <!-- end of docs container -->
       </div>
