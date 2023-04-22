@@ -7,6 +7,9 @@ const MKCup = require("../models/MKCup");
 // auth middleware
 const checkHeader = require("../middleware/checkHeader");
 
+// utils
+const toFilename = require("../utils/toFileName");
+
 router.get("/cups", async (req, res) => {
   try {
     const name = req.query.name;

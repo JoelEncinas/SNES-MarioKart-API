@@ -7,7 +7,6 @@ const mkNonPlayableSchema = new mongoose.Schema({
   courses: {
     type: [Number],
     ref: "MKCourse",
-    required: true,
   },
   description: {
     type: String,
@@ -20,7 +19,6 @@ const mkNonPlayableSchema = new mongoose.Schema({
 
 mkNonPlayableSchema.pre("save", function (next) {
   const filename = toFilename(this.name, false);
-  console.log(filename);
 
   this.image = `${process.env.URL}/${filename}`;
   next();

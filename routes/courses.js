@@ -7,6 +7,9 @@ const MKCourse = require("../models/MKCourse");
 // auth middleware
 const checkHeader = require("../middleware/checkHeader");
 
+// utils
+const toFilename = require("../utils/toFileName");
+
 router.get("/courses", async (req, res) => {
   try {
     const name = req.query.name;
@@ -92,7 +95,10 @@ router.put(
       });
 
       if (name) {
-        updatedCourse.image = `${process.env.URL}/images/${toFilename(name, false)}`;
+        updatedCourse.image = `${process.env.URL}/images/${toFilename(
+          name,
+          false
+        )}`;
       }
 
       const course = await MKCourse.findByIdAndUpdate(id, updatedCourse, {

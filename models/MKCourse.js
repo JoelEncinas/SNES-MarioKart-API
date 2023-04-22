@@ -15,9 +15,8 @@ const mkCourseSchema = new mongoose.Schema({
   },
   obstacles: {
     type: [String],
-    required: true,
   },
-  character: { type: Number, ref: "MKCharacter", required: true },
+  character: { type: Number, ref: "MKCharacter" },
   image: {
     type: String,
   },
