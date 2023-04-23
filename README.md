@@ -3,7 +3,7 @@
 
 <img src="https://github.com/JoelEncinas/restapi/blob/main/images/SNES_SuperMarioKart.jpg" alt="super mario kart" height="200px" width="100%">
 
-This API provides information about the SNES version of the classic game, Mario Kart. It allows users to retrieve data about various game elements, such as:
+This [API](https://snes-smk.onrender.com/) provides information about the SNES version of the classic game, Mario Kart. It allows users to retrieve data about various game elements, such as:
 
 
 - Characters: A list of all playable characters in the game, along with their attributes (speed, acceleration, handling and weight).
@@ -21,19 +21,4 @@ This API provides information about the SNES version of the classic game, Mario 
 
 
 ## 📭 Routes 
-Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized. Users can retrieve data by making HTTP requests to various endpoints, such as:
-
-    /api/characters
-    /api/items
-    /api/courses
-    /api/cups
-    /api/categories
-    /api/game-modes
-    /api/maximum-speeds
-    /api/non-playable
-    /api/rivals
-    /api/images
-
-## 📜 Documentation
-
-Find all the details [here](https://snes-smk.onrender.com)
+Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized. Users can retrieve data by making HTTP requests to various endpoints. 
