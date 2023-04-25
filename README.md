@@ -22,3 +22,15 @@ This [API](https://snes-smk.onrender.com/) provides information about the SNES v
 
 ## 📭 Routes 
 Each endpoint returns data in a standard format, such as JSON, that can be easily parsed and used by client applications. The API also supports various HTTP methods, such as GET, POST, PUT, and DELETE, to allow users to create, update, and delete data as needed, although POST, PUT and DELETE methods require a 'mk-token' header with a password in order to be authorized. Users can retrieve data by making HTTP requests to various endpoints. 
+
+## 🚀 Things I learned about
+- **Express**
+
+  - *Request types: GET, POST, PUT, DELETE*
+  - *Middleware*
+    - *Adding rate-limit to requests*
+    - *require headers for authorization in routes*
+- **Mongoose**
+  
+  - *Creating models*
+  - *Retrieving data*
